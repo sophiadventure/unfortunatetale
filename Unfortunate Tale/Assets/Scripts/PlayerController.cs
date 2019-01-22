@@ -7,11 +7,12 @@ public class PlayerController : MonoBehaviour
 
     public string playerName;
     public float moveSpeed;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         float horizontalMove = Input.GetAxisRaw("Horizontal");
         float verticalMove = Input.GetAxisRaw("Vertical");
+
         bool isRight = horizontalMove > 0.5f;
         bool isLeft = horizontalMove < -0.5f;
         bool isUp = verticalMove > 0.5f;
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour
         // bool isMove = isHorizontalMove || isVerticalMove;
         float verticalTranslate = verticalMove * moveSpeed * Time.deltaTime;
         float horizontalTranslate = horizontalMove * moveSpeed * Time.deltaTime;
+
         if (isHorizontalMove)
         {
             transform.Translate(new Vector3(horizontalMove, 0f, 0f));
@@ -36,6 +39,9 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(new Vector3(0f, verticalMove, 0f));
         }
+
+        animator.SetFloat("MoveX", horizontalMove);
+        animator.SetFloat("MoveY", verticalMove);
 
     }
 
