@@ -27,21 +27,27 @@ public class PlayerController : MonoBehaviour
         bool isDown = verticalMove < -0.5f;
         bool isHorizontalMove = isRight || isLeft;
         bool isVerticalMove = isUp || isDown;
-        // bool isMove = isHorizontalMove || isVerticalMove;
+        bool isMove = isHorizontalMove || isVerticalMove;
         float verticalTranslate = verticalMove * moveSpeed * Time.deltaTime;
         float horizontalTranslate = horizontalMove * moveSpeed * Time.deltaTime;
 
         if (isHorizontalMove)
         {
-            transform.Translate(new Vector3(horizontalMove, 0f, 0f));
+            transform.Translate(new Vector3(horizontalTranslate, 0f, 0f));
         }
         if (isVerticalMove)
         {
-            transform.Translate(new Vector3(0f, verticalMove, 0f));
+            transform.Translate(new Vector3(0f, verticalTranslate, 0f));
+        }
+        if (isMove)
+        {
+            animator.SetFloat("LastMoveX", horizontalMove);
+            animator.SetFloat("LastMoveY", verticalMove);
         }
 
         animator.SetFloat("MoveX", horizontalMove);
         animator.SetFloat("MoveY", verticalMove);
+        animator.SetBool("IsPlayerMoving", isMove);
 
     }
 

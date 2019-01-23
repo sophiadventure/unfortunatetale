@@ -1,23 +1,19 @@
 fileFormatVersion: 2
-guid: d726c0ed5ef6d4ff98fbbc0e9b814d71
+guid: 0634c7cfd38934c4aab8b89f6dd05842
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GamesPlusJames_RPG-Character_0
-    21300002: GamesPlusJames_RPG-Character_1
-    21300004: GamesPlusJames_RPG-Character_2
-    21300006: GamesPlusJames_RPG-Character_3
-    21300008: GamesPlusJames_RPG-Character_4
-    21300010: GamesPlusJames_RPG-Character_5
-    21300012: GamesPlusJames_RPG-Character_6
-    21300014: GamesPlusJames_RPG-Character_7
-    21300016: GamesPlusJames_RPG-Character_8
-    21300018: GamesPlusJames_RPG-Character_9
-    21300020: GamesPlusJames_RPG-Character_10
-    21300022: GamesPlusJames_RPG-Character_11
-    21300024: GamesPlusJames_RPG-Character_12
-    21300026: GamesPlusJames_RPG-Character_13
-    21300028: GamesPlusJames_RPG-Character_14
-    21300030: GamesPlusJames_RPG-Character_15
+    21300000: mina_sprite_0
+    21300002: mina_sprite_1
+    21300004: mina_sprite_2
+    21300006: mina_sprite_3
+    21300008: mina_sprite_4
+    21300010: mina_sprite_5
+    21300012: mina_sprite_6
+    21300014: mina_sprite_7
+    21300016: mina_sprite_8
+    21300018: mina_sprite_9
+    21300020: mina_sprite_10
+    21300022: mina_sprite_11
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -61,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -76,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -87,7 +83,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 64
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -98,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: WebGL
-    maxTextureSize: 64
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -111,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_0
+      name: mina_sprite_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
-        width: 16
-        height: 16
+        y: 33
+        width: 15
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,19 +121,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48cdbf8ef6f264878ae5d1025eeb4764
+      spriteID: 50ef117531b2d4c0a84b9fe3bfbdc007
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_1
+      name: mina_sprite_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 48
+        x: 15
+        y: 33
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,99 +141,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 516641afb3ad54633b34eee45a76e8b6
+      spriteID: 347a13d1d2aaa4d299540d8aee72706a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3f7e752a410a4f87b1d8b940a5f9783
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 284c732a5145147a9aa69e25d9960528
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5694c527b24224efeb8e7a05ce9151c3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_5
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98d4a55a50cf243978d433c6e5889cec
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_6
+      name: mina_sprite_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 33
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,19 +161,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00ba377840fc148c292caa853bf722e3
+      spriteID: c72bb56badffb46dda8046fcfed42697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_7
+      name: mina_sprite_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
+        x: 49
+        y: 33
         width: 16
-        height: 16
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,19 +181,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f902de5d130fd4047bef8fb08576a0bb
+      spriteID: b66242cb512d4439c9770d0d150e165a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_8
+      name: mina_sprite_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
+        x: 65
+        y: 33
+        width: 14
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,19 +201,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06bacfe086c574a08a3c61c076036d31
+      spriteID: 7f5359c41c01043f2a7a53a99ac572d6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_9
+      name: mina_sprite_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
+        x: 80
+        y: 33
         width: 16
-        height: 16
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,59 +221,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec9338d51b5364af8bfc50e5a9753a67
+      spriteID: 78746159fed99469ba43f9651d6efa38
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_10
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92bd78dc9140947088a13be51bd89270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_11
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff86bfa4d95b64866a16b1473f76dfc4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_12
+      name: mina_sprite_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 15
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,19 +241,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db1a51ef571584f84aad0b013139d1ca
+      spriteID: e12360b4d856f4b56b2a1d642ee587c4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_13
+      name: mina_sprite_7
       rect:
         serializedVersion: 2
-        x: 16
+        x: 17
         y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,19 +261,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 516c441614c294c3f83fcd2ca7183d17
+      spriteID: 8526387f5f2274a819b99a63f5846eed
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_14
+      name: mina_sprite_8
       rect:
         serializedVersion: 2
-        x: 32
+        x: 34
         y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -405,19 +281,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b09c6b81876b4141893544a6d656c5f
+      spriteID: 389eb5dcdef694b0489f3d3e6886338a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_15
+      name: mina_sprite_9
       rect:
         serializedVersion: 2
-        x: 48
+        x: 50
         y: 0
         width: 16
-        height: 16
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,7 +301,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cae633f5fb0cc42719756b07d5208dbf
+      spriteID: 134862ab5546541d78f489e1afd4ffc4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mina_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 0
+        width: 14
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1646cfd6b094ac7b3feb1fbacb987c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mina_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd289684dad054e47ae18673845bcb7f
       vertices: []
       indices: 
       edges: []
@@ -433,7 +349,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8132dbe84d7b3432a9443890cd61833d
+    spriteID: db52a2861385448a2af4fc3a07b32311
     vertices: []
     indices: 
     edges: []
