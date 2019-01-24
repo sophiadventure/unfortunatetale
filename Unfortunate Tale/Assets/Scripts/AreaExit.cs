@@ -23,11 +23,10 @@ public class AreaExit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-        //otherTag = other.tag;        
-        //if(other.tag == "Player")
-        //{
-        //    SceneManager.LoadScene(areaToLoad);
-        //}
+        otherTag = other.tag;        
+        if(other.tag == "Player")
+        {
+            SceneManager.LoadScene(areaToLoad);
+        }
     }
 }
