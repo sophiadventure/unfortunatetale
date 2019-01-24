@@ -7,13 +7,8 @@ public class PlayerController : MonoBehaviour
 
     public string playerName;
     public float moveSpeed;
-    private Animator animator;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+    public Animator animator;
+    public Rigidbody2D rigidBody;
 
     // Update is called once per frame
     void Update()
@@ -21,24 +16,17 @@ public class PlayerController : MonoBehaviour
         float horizontalMove = Input.GetAxisRaw("Horizontal");
         float verticalMove = Input.GetAxisRaw("Vertical");
 
-        bool isRight = horizontalMove > 0.5f;
-        bool isLeft = horizontalMove < -0.5f;
-        bool isUp = verticalMove > 0.5f;
-        bool isDown = verticalMove < -0.5f;
+        float moveThreshold = 0.5f;
+        bool isRight = horizontalMove > moveThreshold;
+        bool isLeft = horizontalMove < -moveThreshold;
+        bool isUp = verticalMove > moveThreshold;
+        bool isDown = verticalMove < -moveThreshold;
         bool isHorizontalMove = isRight || isLeft;
         bool isVerticalMove = isUp || isDown;
         bool isMove = isHorizontalMove || isVerticalMove;
-        float verticalTranslate = verticalMove * moveSpeed * Time.deltaTime;
-        float horizontalTranslate = horizontalMove * moveSpeed * Time.deltaTime;
 
-        if (isHorizontalMove)
-        {
-            transform.Translate(new Vector3(horizontalTranslate, 0f, 0f));
-        }
-        if (isVerticalMove)
-        {
-            transform.Translate(new Vector3(0f, verticalTranslate, 0f));
-        }
+        rigidBody.velocity = new Vector2(horizontalMove * moveSpeed, verticalMove * moveSpeed);
+
         if (isMove)
         {
             animator.SetFloat("LastMoveX", horizontalMove);
@@ -53,6 +41,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+
     }
 }
