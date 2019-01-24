@@ -9,9 +9,19 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public Animator animator;
     public Rigidbody2D rigidBody;
+    public static PlayerController INSTANCE;
 
     private void Start()
     {
+        // Only instantiate when the game starts running
+        if(INSTANCE == null)
+        {
+            INSTANCE = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         DontDestroyOnLoad(gameObject);
     }
 
