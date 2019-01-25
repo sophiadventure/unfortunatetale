@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+
 public class AreaExit : MonoBehaviour
 {
 
     public string areaToLoad;
-    public string otherTag;
+    public string areaTransitionName; // Name of this connection
 
     // Use this for initialization
     void Start()
@@ -23,10 +24,12 @@ public class AreaExit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        otherTag = other.tag;        
         if(other.tag == "Player")
         {
+            // Load next map
             SceneManager.LoadScene(areaToLoad);
+            // Tell the static player control which transition just happened
+            PlayerController.INSTANCE.areaTransitionName = this.areaTransitionName;
         }
     }
 }

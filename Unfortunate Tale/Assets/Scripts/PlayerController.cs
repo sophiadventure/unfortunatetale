@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public Animator animator;
     public Rigidbody2D rigidBody;
-    public static PlayerController INSTANCE;
+    public string areaTransitionName; // Exit we JUST used
+
+    public static PlayerController INSTANCE; // this doesn't show up in the UI because it is static
 
     private void Start()
     {
