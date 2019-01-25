@@ -40,11 +40,13 @@ public class PlayerController : MonoBehaviour
         bool isDown = verticalMove < -moveThreshold;
         bool isHorizontalMove = isRight || isLeft;
         bool isVerticalMove = isUp || isDown;
-        bool isMove = isHorizontalMove || isVerticalMove;
+        bool isDance = Input.GetButton("Fire1");
+        bool isMove = isHorizontalMove || isVerticalMove; // Would the player move if the rest of the logic allows it?
+        bool isMoving = isMove && !isDance; // Stop moving when you dance
 
         rigidBody.velocity = new Vector2(horizontalMove * moveSpeed, verticalMove * moveSpeed);
 
-        if (isMove)
+        if (isMoving)
         {
             animator.SetFloat("LastMoveX", horizontalMove);
             animator.SetFloat("LastMoveY", verticalMove);
@@ -52,7 +54,8 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("MoveX", horizontalMove);
         animator.SetFloat("MoveY", verticalMove);
-        animator.SetBool("IsPlayerMoving", isMove);
+        animator.SetBool("IsPlayerMoving", isMoving);
+        animator.SetBool("IsPlayerDancing", isDance);
 
     }
 
