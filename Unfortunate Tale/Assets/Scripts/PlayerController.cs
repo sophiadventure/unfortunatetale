@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rigidBody;
     public string areaTransitionName; // Exit we JUST used
     public Vector2 startingPosition;
+    public bool allowZRotation;
 
     public static PlayerController INSTANCE; // this doesn't show up in the UI because it is static
 
@@ -19,11 +20,13 @@ public class PlayerController : MonoBehaviour
         // Only instantiate when the game starts running
         if(INSTANCE == null)
         {
+            Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
             INSTANCE = this;
             if(startingPosition != null)
             {
                 this.transform.position = startingPosition;
             }
+            rb.constraints = allowZRotation ? RigidbodyConstraints2D.None : RigidbodyConstraints2D.FreezeRotation;
         }
         else
         {

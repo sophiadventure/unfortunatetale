@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerLoader : MonoBehaviour
 {
     public GameObject player;
+    public bool allowZRotation = false;
 
     // Start is called before the first frame update
     void Start()
@@ -13,10 +14,13 @@ public class PlayerLoader : MonoBehaviour
 
         if(PlayerController.INSTANCE == null)
         {
+            PlayerController playerController = player.GetComponent<PlayerController>();
             if (entrance != null)
             {
-                player.GetComponent<PlayerController>().startingPosition = entrance.transform.position;
+                playerController.startingPosition = entrance.transform.position;
             }
+
+            playerController.allowZRotation = allowZRotation;
             Instantiate(player);
         }
     }
