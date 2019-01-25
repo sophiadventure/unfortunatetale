@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rigidBody;
     public string areaTransitionName; // Exit we JUST used
+    public Vector2 startingPosition;
 
     public static PlayerController INSTANCE; // this doesn't show up in the UI because it is static
 
@@ -19,6 +20,10 @@ public class PlayerController : MonoBehaviour
         if(INSTANCE == null)
         {
             INSTANCE = this;
+            if(startingPosition != null)
+            {
+                this.transform.position = startingPosition;
+            }
         }
         else
         {
