@@ -24,9 +24,13 @@ public class CameraController : MonoBehaviour
     {
         this.halfHeight = Camera.main.orthographicSize;
         this.halfWidth = this.halfHeight * Camera.main.aspect;
+
+
         // halfHeight and halfWidth adjustment are there to prevent camera from showing anything out of bounds 
         this.bottomLeftLimit = theMap.localBounds.min + new Vector3(this.halfWidth, this.halfHeight, 0f);
         this.topRightLimit = theMap.localBounds.max + new Vector3(-this.halfWidth, -this.halfHeight, 0f);
+
+        PlayerController.INSTANCE.setBounds(theMap.localBounds.min, theMap.localBounds.max);
     }
 
 
@@ -51,4 +55,5 @@ public class CameraController : MonoBehaviour
             );
         }
     }
+
 }

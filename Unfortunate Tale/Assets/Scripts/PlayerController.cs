@@ -13,26 +13,31 @@ public class PlayerController : MonoBehaviour
     public Vector2 startingPosition;
     public bool allowZRotation;
 
+    private Vector3 bottomLeftLimit;
+    private Vector3 topRightLimit;
+
     public static PlayerController INSTANCE; // this doesn't show up in the UI because it is static
 
     private void Start()
     {
+        Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
+        rb.constraints = allowZRotation ? RigidbodyConstraints2D.None : RigidbodyConstraints2D.FreezeRotation;
+
         // Only instantiate when the game starts running
         if(INSTANCE == null)
         {
             INSTANCE = this;
-            if(startingPosition != null)
-            {
-                this.transform.position = startingPosition;
-            }
-
-            Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
-            rb.constraints = allowZRotation ? RigidbodyConstraints2D.None : RigidbodyConstraints2D.FreezeRotation;
         }
         else
         {
             Destroy(gameObject);
         }
+
+        if (startingPosition != null)
+        {
+            INSTANCE.transform.position = startingPosition;
+        }
+
         DontDestroyOnLoad(gameObject);
     }
 
@@ -55,6 +60,7 @@ public class PlayerController : MonoBehaviour
         // Move the player
         rigidBody.velocity = new Vector2(horizontalMove * moveSpeed, verticalMove * moveSpeed);
 
+
         // Set animator variables below
 
         if (isMove)
@@ -72,8 +78,26 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void LateUpdate()
+    {
+        // Keep player within bounds
+        this.transform.position = new Vector3(
+            Mathf.Clamp(this.transform.position.x, this.bottomLeftLimit.x, this.topRightLimit.x),
+            Mathf.Clamp(this.transform.position.y, this.bottomLeftLimit.y, this.topRightLimit.y),
+            this.transform.position.z
+        );
+    }
+
     void FixedUpdate()
     {
 
+    }
+
+    public void setBounds(Vector3 bottomLeftBound, Vector3 topRightBound)
+    {
+        CircleCollider2D c = GetComponent<CircleCollider2D>();
+        Vector3 offset = GetComponent<Renderer>().bounds.size ;
+        this.bottomLeftLimit = bottomLeftBound + new Vector3(offset.x/2, offset.y/2, 0f);
+        this.topRightLimit = topRightBound + new Vector3(-offset.x/2, -offset.y/2, 0f);
     }
 }
