@@ -20,12 +20,13 @@ public class PlayerController : MonoBehaviour
         // Only instantiate when the game starts running
         if(INSTANCE == null)
         {
-            Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
             INSTANCE = this;
             if(startingPosition != null)
             {
                 this.transform.position = startingPosition;
             }
+
+            Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
             rb.constraints = allowZRotation ? RigidbodyConstraints2D.None : RigidbodyConstraints2D.FreezeRotation;
         }
         else

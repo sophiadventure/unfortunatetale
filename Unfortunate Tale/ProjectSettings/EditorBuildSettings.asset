@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ThePark.unity
     guid: caf834d6b9a2043e1ac7b3e63cbee37e
   - enabled: 1
+    path: Assets/Scenes/Physics.unity
+    guid: 86e68d7af63db431ab091b6d95484630
+  - enabled: 1
     path: Assets/Scenes/TheOtherPark.unity
     guid: f8044b7c03494465184efd7a4ee5ffac
   m_configObjects: {}
