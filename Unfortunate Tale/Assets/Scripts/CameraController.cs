@@ -16,7 +16,8 @@ public class CameraController : MonoBehaviour
     // For camera issues look at https://hackernoon.com/making-your-pixel-art-game-look-pixel-perfect-in-unity3d-3534963cad1d
     // https://blogs.unity3d.com/2015/06/19/pixel-perfect-2d/
     // https://www.youtube.com/watch?v=0bgux-JWnRQ
-    // Keywords: warp, flicker, show seams
+    // https://gamedev.stackexchange.com/questions/114150/how-do-i-snap-the-unity-camera-to-a-2d-tile-based-map
+    // Keywords for solutions: warp, flicker, show seams, snap to grid
 
 
     private void Start()
