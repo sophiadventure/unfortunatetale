@@ -9,18 +9,22 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public Animator animator;
     public Rigidbody2D rigidBody;
-    public string areaTransitionName; // Exit we JUST used
-    public Vector2 startingPosition;
+    public string dropLocationName; // Exit we JUST used
     public bool allowZRotation;
+
+    private bool justEntered = false;
 
     private Vector3 bottomLeftLimit;
     private Vector3 topRightLimit;
+    private Vector2 mapStartLocation;
 
     public static PlayerController INSTANCE; // this doesn't show up in the UI because it is static
 
     private void Start()
     {
         Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
+        AreaEntrance entrance = FindObjectOfType<AreaEntrance>();
+
         rb.constraints = allowZRotation ? RigidbodyConstraints2D.None : RigidbodyConstraints2D.FreezeRotation;
 
         // Only instantiate when the game starts running
@@ -33,9 +37,9 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (startingPosition != null)
+        if(entrance != null)
         {
-            INSTANCE.transform.position = startingPosition;
+            this.goThroughDoor(entrance.transform.position);
         }
 
         DontDestroyOnLoad(gameObject);
@@ -57,12 +61,13 @@ public class PlayerController : MonoBehaviour
         bool isMove = isHorizontalMove || isVerticalMove;
         bool isDance = Input.GetButton("Fire1");
 
+        this.handlePlayerEntrance();
+
         // Move the player
         rigidBody.velocity = new Vector2(horizontalMove * moveSpeed, verticalMove * moveSpeed);
 
 
         // Set animator variables below
-
         if (isMove)
         {
             // The 2 variables below are used to determine the orientation of the player
@@ -93,10 +98,33 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+    // Call this from other scripts 
+    // Player went through a doorway of some kind
+    public void goThroughDoor(Vector2 mapStartLocation)
+    {
+        this.mapStartLocation = mapStartLocation;
+        this.justEntered = true;
+    }
+
+    // Handle the player going through a doorway of some kind
+    // Called by the player update loop
+    private void handlePlayerEntrance()
+    {
+        if (this.justEntered)
+        {
+            INSTANCE.transform.position = this.mapStartLocation;
+            this.justEntered = false;
+        }
+    }
+
+
     public void setBounds(Vector3 bottomLeftBound, Vector3 topRightBound)
     {
         CircleCollider2D c = GetComponent<CircleCollider2D>();
         Vector3 offset = GetComponent<Renderer>().bounds.size ;
+
+        // Prevent mina head from going off screen
         this.bottomLeftLimit = bottomLeftBound + new Vector3(offset.x/2, offset.y/2, 0f);
         this.topRightLimit = topRightBound + new Vector3(-offset.x/2, -offset.y/2, 0f);
     }

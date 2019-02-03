@@ -280,11 +280,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1749666919071685344, guid: 84f93c0e282884d149d5f52310d5240f,
-        type: 3}
-      propertyPath: m_Name
-      value: Area Entrance
-      objectReference: {fileID: 0}
     - target: {fileID: 1749666919071685346, guid: 84f93c0e282884d149d5f52310d5240f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -354,6 +349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.84822
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749666919071685344, guid: 84f93c0e282884d149d5f52310d5240f,
+        type: 3}
+      propertyPath: m_Name
+      value: Area Entrance
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84f93c0e282884d149d5f52310d5240f, type: 3}
@@ -506,5 +506,10 @@ PrefabInstance:
       propertyPath: allowZRotation
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9165668107410530253, guid: 6f5e5e106ad574ce2bcc01ad56af7ac6,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 48, guid: 1f2c19d5192cb44d2a417952734eb6d7, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f5e5e106ad574ce2bcc01ad56af7ac6, type: 3}

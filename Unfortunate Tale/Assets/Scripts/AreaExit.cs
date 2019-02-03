@@ -8,7 +8,10 @@ public class AreaExit : MonoBehaviour
 {
 
     public string areaToLoad;
-    public string areaTransitionName; // Name of this connection
+    public string dropLocationName; // Name of this connection
+
+    public float waitToLoad = 1f;
+    private bool shouldLoadAfterFade;
 
     // Use this for initialization
     void Start()
@@ -19,17 +22,26 @@ public class AreaExit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (shouldLoadAfterFade)
+        {
+            waitToLoad -= Time.deltaTime;
+            if(waitToLoad <= 0)
+            {
+                shouldLoadAfterFade = false;
+                // Load next map
+                SceneManager.LoadScene(areaToLoad);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
         {
-            // Load next map
-            SceneManager.LoadScene(areaToLoad);
+            this.shouldLoadAfterFade = true;
+            UIFade.INSTANCE.FadeToBlack();
             // Tell the static player control which transition just happened
-            PlayerController.INSTANCE.areaTransitionName = this.areaTransitionName;
+            PlayerController.INSTANCE.dropLocationName = this.dropLocationName;
         }
     }
 }

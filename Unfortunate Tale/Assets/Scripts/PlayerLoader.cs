@@ -10,15 +10,9 @@ public class PlayerLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject entrance = GameObject.Find("Area Entrance");
-
         if(PlayerController.INSTANCE == null)
         {
             PlayerController playerController = player.GetComponent<PlayerController>();
-            if (entrance != null)
-            {
-                playerController.startingPosition = entrance.transform.position;
-            }
 
             playerController.allowZRotation = allowZRotation;
             Instantiate(player);

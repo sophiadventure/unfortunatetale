@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TheOtherPark.unity
     guid: f8044b7c03494465184efd7a4ee5ffac
+  - enabled: 1
+    path: Assets/Scenes/Start_clone.unity
+    guid: 2f3feb42f195c4fe8b0102c50c1cbd99
   m_configObjects: {}
