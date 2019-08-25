@@ -52,15 +52,15 @@ public class CameraController : MonoBehaviour
             //this.transform.position = new Vector3(x, y, this.transform.position.z);
             this.transform.position = new Vector3(target.position.x, target.position.y, this.transform.position.z);
 
-            if(this.bottomLeftLimit != null && this.topRightLimit != null)
-            {
-                // Keep camera within bounds
-                this.transform.position = new Vector3(
-                    Mathf.Clamp(this.transform.position.x, this.bottomLeftLimit.x, this.topRightLimit.x),
-                    Mathf.Clamp(this.transform.position.y, this.bottomLeftLimit.y, this.topRightLimit.y),
-                    this.transform.position.z
-                );
-            }
+            //if(this.bottomLeftLimit != null && this.topRightLimit != null)
+            //{
+            //    // Keep camera within bounds
+            //    this.transform.position = new Vector3(
+            //        Mathf.Clamp(this.transform.position.x, this.bottomLeftLimit.x, this.topRightLimit.x),
+            //        Mathf.Clamp(this.transform.position.y, this.bottomLeftLimit.y, this.topRightLimit.y),
+            //        this.transform.position.z
+            //    );
+            //}
         }
     }
 

@@ -39,7 +39,10 @@ public class AreaExit : MonoBehaviour
         if(other.tag == "Player")
         {
             this.shouldLoadAfterFade = true;
-            UIFade.INSTANCE.FadeToBlack();
+            if(UIFade.INSTANCE != null)
+            {
+                UIFade.INSTANCE.FadeToBlack();
+            }
             // Tell the static player control which transition just happened
             PlayerController.INSTANCE.dropLocationName = this.dropLocationName;
         }

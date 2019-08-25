@@ -15,7 +15,7 @@ public class AreaEntrance : MonoBehaviour
         {
             p.goThroughDoor(this.transform.position);
         }
-        UIFade.INSTANCE.FadeFromBlack();
+        //UIFade.INSTANCE.FadeFromBlack();
     }
 
     // Update is called once per frame
