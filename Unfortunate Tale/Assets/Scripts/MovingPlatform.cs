@@ -24,6 +24,10 @@ public class MovingPlatform : MonoBehaviour
             this.handlePlatformMove();
             PlayerController.INSTANCE.moveWithObject(this.rigidbody);
         }
+        else
+        {
+            this.stopPlatformMove();
+        }
     }
 
     // Called when the moving platform collides with another object
@@ -33,6 +37,11 @@ public class MovingPlatform : MonoBehaviour
         {
             this.isActive = true;
             PlayerController.INSTANCE.disableMove();
+        }
+        else if(otherCollider.tag == "PlatformExit" || otherCollider.tag == "PlatformEntrance")
+        {
+            this.isActive = false;
+            PlayerController.INSTANCE.enableMove();
         }
     }
 
@@ -52,5 +61,10 @@ public class MovingPlatform : MonoBehaviour
     {
         float horizontalMove = Input.GetAxisRaw("Horizontal");
         this.rigidbody.velocity = new Vector2(horizontalMove * this.moveSpeed, 0);
+    }
+
+    private void stopPlatformMove()
+    {
+        this.rigidbody.velocity = new Vector2(0, 0);
     }
 }
